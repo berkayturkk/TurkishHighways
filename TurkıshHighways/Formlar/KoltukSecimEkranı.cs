@@ -7,20 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TurkıshHighways.Formlar;
 
 namespace TurkıshHighways
 {
     public partial class KoltukSecimEkranı : Form
     {
+
+        Button btn;  // Buton tanımlaması yapıldı.
+
         public KoltukSecimEkranı()
         {
             InitializeComponent();
-        }
+        } 
 
         private void btnKoltuk1_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            string koltukNo = btn.Text;
+            btn = sender as Button; 
+
+            // Seçilen butonun rengi yeşil olması ve böylece seçildiği anlaşılması sağlandı.
 
             if (rdbBay.Checked == true || rdbBayan.Checked == true)
             {
@@ -30,14 +35,10 @@ namespace TurkıshHighways
             {
                 MessageBox.Show("Lütfen önce cinsiyet seçiniz, daha sonra koltuk seçiniz !!");
             }
-
-
         }
 
         private void btnSecimiIptalEt_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-
             if (btn.BackColor == Color.ForestGreen)
             {
                 btn.BackColor = Color.LightGray;
@@ -45,8 +46,8 @@ namespace TurkıshHighways
         }
 
         private void btnKoltukEkle_Click(object sender, EventArgs e)
-        {         
-
+        {  
+            // Seçilen buton kaydedilerek enabled ı false olarak tekrar seçim yapılmasının önüne geçildi ve cinsiyete göre rengi belirlendi.
             if (lbSecilenKoltuklar.Items.Contains(btn.Text + "-" + "Bayan") == false && lbSecilenKoltuklar.Items.Contains(btn.Text + "-" + "Bay") == false && btn.BackColor == Color.ForestGreen)
             {
                 lbSecilenKoltuklar.Items.Add(btn.Text + "-" + (rdbBayan.Checked == true ? "Bayan" : "Bay"));
@@ -60,8 +61,32 @@ namespace TurkıshHighways
                 }
                 btn.Enabled = false;
             }
+            else
+            {
+                MessageBox.Show("Aynı koltuktan birden fazla işlem yapılamaz. Lütfen boş bir koltuk seçiniz!!");
+            }
+
+
             rdbBay.Checked = false;   // Her koltuk seçiminden sonra cinsiyet seçimindeki bay seçiminin temizlenmesi sağlandı.
             rdbBayan.Checked = false;  // Her koltuk seçiminden sonra cinsiyet seçimindeki bayan seçiminin temizlenmesi sağlandı.
+        }
+
+        private void btnKoltukSil_Click(object sender, EventArgs e)
+        {               
+            lbSecilenKoltuklar.Items.Remove(lbSecilenKoltuklar.SelectedItem);
+        }
+
+        private void btnOnaylaDevamEt_Click(object sender, EventArgs e)
+        { 
+            OdemeEkranı odemeEkranı = new OdemeEkranı();
+
+            for (int i = 0; i < lbSecilenKoltuklar.Items.Count; i++)
+            {
+                odemeEkranı.lblKoltukk.Text = Convert.ToString(lbSecilenKoltuklar.Items[i]);
+            }
+            odemeEkranı.Show();
+            this.Hide();
+
         }
     }
 }

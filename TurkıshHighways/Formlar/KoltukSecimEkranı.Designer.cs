@@ -761,6 +761,7 @@ namespace TurkıshHighways
             this.btnKoltukSil.TabIndex = 60;
             this.btnKoltukSil.Text = "Sil";
             this.btnKoltukSil.UseVisualStyleBackColor = true;
+            this.btnKoltukSil.Click += new System.EventHandler(this.btnKoltukSil_Click);
             // 
             // btnKoltukEkle
             // 
@@ -798,6 +799,7 @@ namespace TurkıshHighways
             this.btnOnaylaDevamEt.TabIndex = 56;
             this.btnOnaylaDevamEt.Text = "Onayla ve Devam Et";
             this.btnOnaylaDevamEt.UseVisualStyleBackColor = true;
+            this.btnOnaylaDevamEt.Click += new System.EventHandler(this.btnOnaylaDevamEt_Click);
             // 
             // KoltukSecimEkranı
             // 

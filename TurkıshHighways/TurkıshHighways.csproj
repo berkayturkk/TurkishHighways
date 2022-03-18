@@ -46,22 +46,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="enumlar.cs" />
+    <Compile Include="Formlar\BiletSecimEkranı.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Formlar\BiletSecimEkranı.Designer.cs">
+      <DependentUpon>BiletSecimEkranı.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\cvv2Nedir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\cvv2Nedir.Designer.cs">
+      <DependentUpon>cvv2Nedir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="KoltukSecimEkranı.cs">
+    <Compile Include="Formlar\KoltukSecimEkranı.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KoltukSecimEkranı.Designer.cs">
+    <Compile Include="Formlar\KoltukSecimEkranı.Designer.cs">
       <DependentUpon>KoltukSecimEkranı.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OdemeEkranı.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OdemeEkranı.Designer.cs">
+      <DependentUpon>OdemeEkranı.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\SeferListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\SeferListesi.Designer.cs">
+      <DependentUpon>SeferListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\YolcuBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\YolcuBilgileri.Designer.cs">
+      <DependentUpon>YolcuBilgileri.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="KoltukSecimEkranı.resx">
+    <EmbeddedResource Include="Formlar\BiletSecimEkranı.resx">
+      <DependentUpon>BiletSecimEkranı.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\cvv2Nedir.resx">
+      <DependentUpon>cvv2Nedir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\KoltukSecimEkranı.resx">
       <DependentUpon>KoltukSecimEkranı.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OdemeEkranı.resx">
+      <DependentUpon>OdemeEkranı.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\SeferListesi.resx">
+      <DependentUpon>SeferListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\YolcuBilgileri.resx">
+      <DependentUpon>YolcuBilgileri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

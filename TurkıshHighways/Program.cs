@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TurkıshHighways.Formlar;
 
 namespace TurkıshHighways
 {
@@ -16,7 +17,7 @@ namespace TurkıshHighways
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new KoltukSecimEkranı());
+            Application.Run(new BiletSecimEkranı());
         }
     }
 }
