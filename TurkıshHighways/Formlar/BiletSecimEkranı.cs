@@ -25,8 +25,7 @@ namespace TurkıshHighways.Formlar
             cmbNereye.Items.AddRange(Enum.GetNames(typeof(Sehirler)));
         }
         private void btnSeferleriGöster_Click(object sender, EventArgs e)
-        {
-            
+        {           
          string gds = dtmpGidisTarihi.Value.ToShortDateString();
          
          DateTime gidis = Convert.ToDateTime(gds);
@@ -40,10 +39,12 @@ namespace TurkıshHighways.Formlar
                      SeferListesi seferListesi = new SeferListesi();
                      seferListesi.lblKalkısYeri.Text = cmbNereden.Text;
                      seferListesi.lblVarısYeri.Text = cmbNereye.Text;
-                     seferListesi.lblGidisTarihi.Text = dtmpGidisTarihi.Value.ToShortDateString();
-                     seferListesi.ShowDialog();
-
+                     seferListesi.lblGidisTarihi.Text = dtmpGidisTarihi.Value.ToShortDateString();                     
+                     seferListesi.Show();
                      this.Hide();
+                     
+
+                     
                  }
                 // Gidiş tarihinin bugünden erken olması engellendi.
                  else

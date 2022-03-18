@@ -17,7 +17,7 @@ namespace TurkıshHighways
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BiletSecimEkranı());
+            Application.Run(new AnaMenü());
         }
     }
 }

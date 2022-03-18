@@ -43,60 +43,67 @@ namespace TurkıshHighways.Formlar
             // lblNereden
             // 
             this.lblNereden.AutoSize = true;
-            this.lblNereden.Location = new System.Drawing.Point(6, 33);
+            this.lblNereden.Location = new System.Drawing.Point(4, 27);
+            this.lblNereden.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNereden.Name = "lblNereden";
-            this.lblNereden.Size = new System.Drawing.Size(63, 17);
+            this.lblNereden.Size = new System.Drawing.Size(48, 13);
             this.lblNereden.TabIndex = 2;
             this.lblNereden.Text = "Nereden";
             // 
             // cmbNereden
             // 
             this.cmbNereden.FormattingEnabled = true;
-            this.cmbNereden.Location = new System.Drawing.Point(122, 30);
+            this.cmbNereden.Location = new System.Drawing.Point(92, 24);
+            this.cmbNereden.Margin = new System.Windows.Forms.Padding(2);
             this.cmbNereden.Name = "cmbNereden";
-            this.cmbNereden.Size = new System.Drawing.Size(220, 24);
+            this.cmbNereden.Size = new System.Drawing.Size(166, 21);
             this.cmbNereden.TabIndex = 3;
             // 
             // lblNereye
             // 
             this.lblNereye.AutoSize = true;
-            this.lblNereye.Location = new System.Drawing.Point(6, 73);
+            this.lblNereye.Location = new System.Drawing.Point(4, 59);
+            this.lblNereye.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNereye.Name = "lblNereye";
-            this.lblNereye.Size = new System.Drawing.Size(54, 17);
+            this.lblNereye.Size = new System.Drawing.Size(41, 13);
             this.lblNereye.TabIndex = 4;
             this.lblNereye.Text = "Nereye";
             // 
             // cmbNereye
             // 
             this.cmbNereye.FormattingEnabled = true;
-            this.cmbNereye.Location = new System.Drawing.Point(122, 70);
+            this.cmbNereye.Location = new System.Drawing.Point(92, 57);
+            this.cmbNereye.Margin = new System.Windows.Forms.Padding(2);
             this.cmbNereye.Name = "cmbNereye";
-            this.cmbNereye.Size = new System.Drawing.Size(220, 24);
+            this.cmbNereye.Size = new System.Drawing.Size(166, 21);
             this.cmbNereye.TabIndex = 5;
             // 
             // lblGidisTarihi
             // 
             this.lblGidisTarihi.AutoSize = true;
-            this.lblGidisTarihi.Location = new System.Drawing.Point(6, 118);
+            this.lblGidisTarihi.Location = new System.Drawing.Point(4, 96);
+            this.lblGidisTarihi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGidisTarihi.Name = "lblGidisTarihi";
-            this.lblGidisTarihi.Size = new System.Drawing.Size(80, 17);
+            this.lblGidisTarihi.Size = new System.Drawing.Size(59, 13);
             this.lblGidisTarihi.TabIndex = 6;
             this.lblGidisTarihi.Text = "Gidiş Tarihi";
             // 
             // dtmpGidisTarihi
             // 
             this.dtmpGidisTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmpGidisTarihi.Location = new System.Drawing.Point(122, 113);
+            this.dtmpGidisTarihi.Location = new System.Drawing.Point(92, 92);
+            this.dtmpGidisTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtmpGidisTarihi.Name = "dtmpGidisTarihi";
-            this.dtmpGidisTarihi.Size = new System.Drawing.Size(220, 22);
+            this.dtmpGidisTarihi.Size = new System.Drawing.Size(166, 20);
             this.dtmpGidisTarihi.TabIndex = 8;
             // 
             // btnSeferleriGöster
             // 
             this.btnSeferleriGöster.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSeferleriGöster.Location = new System.Drawing.Point(122, 152);
+            this.btnSeferleriGöster.Location = new System.Drawing.Point(92, 124);
+            this.btnSeferleriGöster.Margin = new System.Windows.Forms.Padding(2);
             this.btnSeferleriGöster.Name = "btnSeferleriGöster";
-            this.btnSeferleriGöster.Size = new System.Drawing.Size(220, 27);
+            this.btnSeferleriGöster.Size = new System.Drawing.Size(165, 22);
             this.btnSeferleriGöster.TabIndex = 10;
             this.btnSeferleriGöster.Text = "Seferleri Göster";
             this.btnSeferleriGöster.UseVisualStyleBackColor = true;
@@ -111,19 +118,22 @@ namespace TurkıshHighways.Formlar
             this.gpbBiletSecim.Controls.Add(this.lblNereye);
             this.gpbBiletSecim.Controls.Add(this.cmbNereden);
             this.gpbBiletSecim.Controls.Add(this.lblNereden);
-            this.gpbBiletSecim.Location = new System.Drawing.Point(14, 135);
+            this.gpbBiletSecim.Location = new System.Drawing.Point(265, 155);
+            this.gpbBiletSecim.Margin = new System.Windows.Forms.Padding(2);
             this.gpbBiletSecim.Name = "gpbBiletSecim";
-            this.gpbBiletSecim.Size = new System.Drawing.Size(472, 187);
+            this.gpbBiletSecim.Padding = new System.Windows.Forms.Padding(2);
+            this.gpbBiletSecim.Size = new System.Drawing.Size(354, 152);
             this.gpbBiletSecim.TabIndex = 9;
             this.gpbBiletSecim.TabStop = false;
             this.gpbBiletSecim.Text = "Bilet Seçim Ekranı";
             // 
             // BiletSecimEkranı
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 327);
+            this.ClientSize = new System.Drawing.Size(897, 542);
             this.Controls.Add(this.gpbBiletSecim);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BiletSecimEkranı";
             this.Text = "BiletSecimEkranı";
             this.Load += new System.EventHandler(this.BiletSecimEkranı_Load);

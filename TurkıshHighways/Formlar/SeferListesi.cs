@@ -23,20 +23,20 @@ namespace TurkıshHighways.Formlar
         }
         public void SeferGöster()
         {
-            seferBağlantı = new SqlConnection("server=.;Initial Catalog=TurkTurizm;Integrated Security=SSPI");
+            seferBağlantı = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TurkıshHighways;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             seferBağlantı.Open();
             if (lblKalkısYeri.Text == "İstanbul" && lblVarısYeri.Text == "Sakarya")
             {
                 seferDa = new SqlDataAdapter("SELECT*FROM IstanbulSakaryaSeferListesi", seferBağlantı);
             }
-            else if (lblKalkısYeri.Text == "İstanbul" && lblVarısYeri.Text == "Düzce")
-            {
-                seferDa = new SqlDataAdapter("SELECT*FROM IstanbulDüzceSeferListesi", seferBağlantı);
-            }
-            else if (lblKalkısYeri.Text == "İstanbul" && lblVarısYeri.Text == "Kocaeli")
-            {
-                seferDa = new SqlDataAdapter("SELECT*FROM IstanbulKocaeliSeferListesi", seferBağlantı);
-            }
+            //else if (lblKalkısYeri.Text == "İstanbul" && lblVarısYeri.Text == "Düzce")
+            //{
+            //    seferDa = new SqlDataAdapter("SELECT*FROM IstanbulDüzceSeferListesi", seferBağlantı);
+            //}
+            //else if (lblKalkısYeri.Text == "İstanbul" && lblVarısYeri.Text == "Kocaeli")
+            //{
+            //    seferDa = new SqlDataAdapter("SELECT*FROM IstanbulKocaeliSeferListesi", seferBağlantı);
+            //}
 
 
             DataTable seferTablo = new DataTable();

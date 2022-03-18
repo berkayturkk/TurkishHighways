@@ -28,8 +28,21 @@ namespace TurkıshHighways
             // Seçilen butonun rengi yeşil olması ve böylece seçildiği anlaşılması sağlandı.
 
             if (rdbBay.Checked == true || rdbBayan.Checked == true)
-            {
-                btn.BackColor = Color.ForestGreen;
+            {                
+                YolcuBilgileri yolcu = new YolcuBilgileri();
+               
+                yolcu.ShowDialog();
+
+                if (yolcu.DialogResult == DialogResult.OK)
+                {
+                    btn.BackColor = Color.ForestGreen;
+                }
+                else if (yolcu.DialogResult == DialogResult.Cancel)
+                {
+                    btn.BackColor = Color.LightGray;
+                    rdbBayan.Checked = false;
+                    rdbBay.Checked = false;
+                }
             }
             else if (rdbBayan.Checked == false && rdbBay.Checked == false)
             {
@@ -72,7 +85,9 @@ namespace TurkıshHighways
         }
 
         private void btnKoltukSil_Click(object sender, EventArgs e)
-        {               
+        {
+            
+         
             lbSecilenKoltuklar.Items.Remove(lbSecilenKoltuklar.SelectedItem);
         }
 
