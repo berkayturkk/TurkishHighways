@@ -21,13 +21,12 @@ namespace TurkıshHighways.Formlar
         {
             // Nereden ve Nereye comboboxlarına enum tiplerinde tanımladığımız sehirler enumlarını eklenmesi sağlandı.
 
-            cmbNereden.Items.AddRange(Enum.GetNames(typeof(Sehirler)));
-            cmbNereye.Items.AddRange(Enum.GetNames(typeof(Sehirler)));
+            cmbNereden.Items.AddRange(Enum.GetNames(typeof(SeferSehirleri)));
+            cmbNereye.Items.AddRange(Enum.GetNames(typeof(SeferSehirleri)));
         }
         private void btnSeferleriGöster_Click(object sender, EventArgs e)
         {           
-         string gds = dtmpGidisTarihi.Value.ToShortDateString();
-         
+         string gds = dtmpGidisTarihi.Value.ToShortDateString();  
          DateTime gidis = Convert.ToDateTime(gds);
          string bgn = DateTime.Now.ToShortDateString();
          DateTime bugün = Convert.ToDateTime(bgn);
@@ -41,10 +40,7 @@ namespace TurkıshHighways.Formlar
                      seferListesi.lblVarısYeri.Text = cmbNereye.Text;
                      seferListesi.lblGidisTarihi.Text = dtmpGidisTarihi.Value.ToShortDateString();                     
                      seferListesi.Show();
-                     this.Hide();
-                     
-
-                     
+                     this.Hide();                                         
                  }
                 // Gidiş tarihinin bugünden erken olması engellendi.
                  else

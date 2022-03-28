@@ -49,55 +49,52 @@ namespace TurkıshHighways.Formlar
             // 
             // txtAd
             // 
-            this.txtAd.Location = new System.Drawing.Point(14, 52);
-            this.txtAd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAd.Location = new System.Drawing.Point(19, 64);
+            this.txtAd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(260, 20);
+            this.txtAd.Size = new System.Drawing.Size(345, 22);
             this.txtAd.TabIndex = 6;
             // 
             // lblAd
             // 
             this.lblAd.AutoSize = true;
-            this.lblAd.Location = new System.Drawing.Point(11, 36);
-            this.lblAd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAd.Location = new System.Drawing.Point(15, 44);
             this.lblAd.Name = "lblAd";
-            this.lblAd.Size = new System.Drawing.Size(20, 13);
+            this.lblAd.Size = new System.Drawing.Size(25, 17);
             this.lblAd.TabIndex = 5;
             this.lblAd.Text = "Ad";
             // 
             // txtSoyad
             // 
-            this.txtSoyad.Location = new System.Drawing.Point(14, 100);
-            this.txtSoyad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSoyad.Location = new System.Drawing.Point(19, 123);
+            this.txtSoyad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(260, 20);
+            this.txtSoyad.Size = new System.Drawing.Size(345, 22);
             this.txtSoyad.TabIndex = 8;
             // 
             // lblSoyad
             // 
             this.lblSoyad.AutoSize = true;
-            this.lblSoyad.Location = new System.Drawing.Point(11, 84);
-            this.lblSoyad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSoyad.Location = new System.Drawing.Point(15, 103);
             this.lblSoyad.Name = "lblSoyad";
-            this.lblSoyad.Size = new System.Drawing.Size(37, 13);
+            this.lblSoyad.Size = new System.Drawing.Size(48, 17);
             this.lblSoyad.TabIndex = 7;
             this.lblSoyad.Text = "Soyad";
             // 
             // txtKimlik
             // 
-            this.txtKimlik.Location = new System.Drawing.Point(14, 154);
-            this.txtKimlik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKimlik.Location = new System.Drawing.Point(19, 190);
+            this.txtKimlik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtKimlik.Name = "txtKimlik";
-            this.txtKimlik.Size = new System.Drawing.Size(260, 20);
+            this.txtKimlik.Size = new System.Drawing.Size(345, 22);
             this.txtKimlik.TabIndex = 10;
             // 
             // lblKimlik
             // 
             this.lblKimlik.AutoSize = true;
-            this.lblKimlik.Location = new System.Drawing.Point(11, 137);
-            this.lblKimlik.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKimlik.Location = new System.Drawing.Point(15, 169);
             this.lblKimlik.Name = "lblKimlik";
-            this.lblKimlik.Size = new System.Drawing.Size(104, 13);
+            this.lblKimlik.Size = new System.Drawing.Size(138, 17);
             this.lblKimlik.TabIndex = 9;
             this.lblKimlik.Text = "T.C. Kimlik Numarası";
             this.lblKimlik.Click += new System.EventHandler(this.lblKimlik_Click);
@@ -105,29 +102,27 @@ namespace TurkıshHighways.Formlar
             // lblUyruk
             // 
             this.lblUyruk.AutoSize = true;
-            this.lblUyruk.Location = new System.Drawing.Point(11, 183);
-            this.lblUyruk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUyruk.Location = new System.Drawing.Point(15, 225);
             this.lblUyruk.Name = "lblUyruk";
-            this.lblUyruk.Size = new System.Drawing.Size(35, 13);
+            this.lblUyruk.Size = new System.Drawing.Size(45, 17);
             this.lblUyruk.TabIndex = 11;
             this.lblUyruk.Text = "Uyruk";
             // 
             // txtPasaport
             // 
             this.txtPasaport.Enabled = false;
-            this.txtPasaport.Location = new System.Drawing.Point(14, 249);
-            this.txtPasaport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPasaport.Location = new System.Drawing.Point(19, 306);
+            this.txtPasaport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPasaport.Name = "txtPasaport";
-            this.txtPasaport.Size = new System.Drawing.Size(260, 20);
+            this.txtPasaport.Size = new System.Drawing.Size(345, 22);
             this.txtPasaport.TabIndex = 14;
             // 
             // lblPasaport
             // 
             this.lblPasaport.AutoSize = true;
-            this.lblPasaport.Location = new System.Drawing.Point(11, 233);
-            this.lblPasaport.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPasaport.Location = new System.Drawing.Point(15, 287);
             this.lblPasaport.Name = "lblPasaport";
-            this.lblPasaport.Size = new System.Drawing.Size(96, 13);
+            this.lblPasaport.Size = new System.Drawing.Size(129, 17);
             this.lblPasaport.TabIndex = 13;
             this.lblPasaport.Text = "Pasaport Numarası";
             // 
@@ -135,19 +130,19 @@ namespace TurkıshHighways.Formlar
             // 
             this.cmbUyruk.Enabled = false;
             this.cmbUyruk.FormattingEnabled = true;
-            this.cmbUyruk.Location = new System.Drawing.Point(14, 199);
-            this.cmbUyruk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbUyruk.Location = new System.Drawing.Point(19, 245);
+            this.cmbUyruk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbUyruk.Name = "cmbUyruk";
-            this.cmbUyruk.Size = new System.Drawing.Size(260, 21);
+            this.cmbUyruk.Size = new System.Drawing.Size(345, 24);
             this.cmbUyruk.TabIndex = 15;
             // 
             // rdbTcVatandasıDegilim
             // 
             this.rdbTcVatandasıDegilim.AutoSize = true;
-            this.rdbTcVatandasıDegilim.Location = new System.Drawing.Point(143, 136);
-            this.rdbTcVatandasıDegilim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbTcVatandasıDegilim.Location = new System.Drawing.Point(191, 167);
+            this.rdbTcVatandasıDegilim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbTcVatandasıDegilim.Name = "rdbTcVatandasıDegilim";
-            this.rdbTcVatandasıDegilim.Size = new System.Drawing.Size(132, 17);
+            this.rdbTcVatandasıDegilim.Size = new System.Drawing.Size(172, 21);
             this.rdbTcVatandasıDegilim.TabIndex = 16;
             this.rdbTcVatandasıDegilim.TabStop = true;
             this.rdbTcVatandasıDegilim.Text = "T.C. Vatandaşı Değilim";
@@ -157,10 +152,9 @@ namespace TurkıshHighways.Formlar
             // lblKoltukNo
             // 
             this.lblKoltukNo.AutoSize = true;
-            this.lblKoltukNo.Location = new System.Drawing.Point(34, 36);
-            this.lblKoltukNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKoltukNo.Location = new System.Drawing.Point(45, 44);
             this.lblKoltukNo.Name = "lblKoltukNo";
-            this.lblKoltukNo.Size = new System.Drawing.Size(0, 13);
+            this.lblKoltukNo.Size = new System.Drawing.Size(0, 17);
             this.lblKoltukNo.TabIndex = 17;
             // 
             // grpYolcuBilgileri
@@ -177,21 +171,21 @@ namespace TurkıshHighways.Formlar
             this.grpYolcuBilgileri.Controls.Add(this.txtSoyad);
             this.grpYolcuBilgileri.Controls.Add(this.lblAd);
             this.grpYolcuBilgileri.Controls.Add(this.txtAd);
-            this.grpYolcuBilgileri.Location = new System.Drawing.Point(9, 10);
-            this.grpYolcuBilgileri.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpYolcuBilgileri.Location = new System.Drawing.Point(12, 12);
+            this.grpYolcuBilgileri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpYolcuBilgileri.Name = "grpYolcuBilgileri";
-            this.grpYolcuBilgileri.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpYolcuBilgileri.Size = new System.Drawing.Size(284, 283);
+            this.grpYolcuBilgileri.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpYolcuBilgileri.Size = new System.Drawing.Size(379, 348);
             this.grpYolcuBilgileri.TabIndex = 4;
             this.grpYolcuBilgileri.TabStop = false;
             this.grpYolcuBilgileri.Text = "Yolcu Bilgileri";
             // 
             // btnYolcuKaydet
             // 
-            this.btnYolcuKaydet.Location = new System.Drawing.Point(22, 297);
-            this.btnYolcuKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnYolcuKaydet.Location = new System.Drawing.Point(29, 366);
+            this.btnYolcuKaydet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnYolcuKaydet.Name = "btnYolcuKaydet";
-            this.btnYolcuKaydet.Size = new System.Drawing.Size(114, 30);
+            this.btnYolcuKaydet.Size = new System.Drawing.Size(152, 37);
             this.btnYolcuKaydet.TabIndex = 5;
             this.btnYolcuKaydet.Text = "Kaydet";
             this.btnYolcuKaydet.UseVisualStyleBackColor = true;
@@ -200,10 +194,10 @@ namespace TurkıshHighways.Formlar
             // btnVazgec
             // 
             this.btnVazgec.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnVazgec.Location = new System.Drawing.Point(167, 297);
-            this.btnVazgec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVazgec.Location = new System.Drawing.Point(223, 366);
+            this.btnVazgec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVazgec.Name = "btnVazgec";
-            this.btnVazgec.Size = new System.Drawing.Size(114, 30);
+            this.btnVazgec.Size = new System.Drawing.Size(152, 37);
             this.btnVazgec.TabIndex = 6;
             this.btnVazgec.Text = "Vazgeç";
             this.btnVazgec.UseVisualStyleBackColor = true;
@@ -211,13 +205,13 @@ namespace TurkıshHighways.Formlar
             // 
             // YolcuBilgileri
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 338);
+            this.ClientSize = new System.Drawing.Size(403, 416);
             this.Controls.Add(this.btnVazgec);
             this.Controls.Add(this.btnYolcuKaydet);
             this.Controls.Add(this.grpYolcuBilgileri);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "YolcuBilgileri";
             this.Text = "YolcuBilgileri";
             this.Load += new System.EventHandler(this.YolcuBilgileri_Load);
@@ -228,10 +222,7 @@ namespace TurkıshHighways.Formlar
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.Label lblAd;
-        private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.Label lblSoyad;
         private System.Windows.Forms.TextBox txtKimlik;
         private System.Windows.Forms.Label lblKimlik;
@@ -244,5 +235,7 @@ namespace TurkıshHighways.Formlar
         private System.Windows.Forms.GroupBox grpYolcuBilgileri;
         private System.Windows.Forms.Button btnYolcuKaydet;
         private System.Windows.Forms.Button btnVazgec;
+        public System.Windows.Forms.TextBox txtAd;
+        public System.Windows.Forms.TextBox txtSoyad;
     }
 }

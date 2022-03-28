@@ -9,21 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TurkıshHighways.Formlar;
 
+
 namespace TurkıshHighways
 {
-    public partial class AnaMenü : Form
+    public partial class CalısanAnaMenü : Form
     {
-        public AnaMenü()
+
+        public CalısanAnaMenü()
         {
             InitializeComponent();
         }
 
-        private void biletİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+
+
+        private void biletAlToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BiletSecimEkranı biletSecimEkranı = new BiletSecimEkranı();         
+            BiletSecimEkranı biletSecimEkranı = new BiletSecimEkranı();
             biletSecimEkranı.Show();
-            
-           
+            this.Hide();
         }
+
+
     }
 }

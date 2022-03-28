@@ -92,8 +92,10 @@ namespace TurkıshHighways
             this.lbSecilenKoltuklar = new System.Windows.Forms.ListBox();
             this.lblSecilenKoltuklar = new System.Windows.Forms.Label();
             this.btnOnaylaDevamEt = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.grpKoltuklar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // grpKoltuklar
@@ -752,6 +754,7 @@ namespace TurkıshHighways
             this.btnSeferListesineDön.TabIndex = 54;
             this.btnSeferListesineDön.Text = "Sefer Listesi Dön";
             this.btnSeferListesineDön.UseVisualStyleBackColor = true;
+            this.btnSeferListesineDön.Click += new System.EventHandler(this.btnSeferListesineDön_Click);
             // 
             // btnKoltukSil
             // 
@@ -801,11 +804,22 @@ namespace TurkıshHighways
             this.btnOnaylaDevamEt.UseVisualStyleBackColor = true;
             this.btnOnaylaDevamEt.Click += new System.EventHandler(this.btnOnaylaDevamEt_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(193, 138);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 61;
+            this.pictureBox2.TabStop = false;
+            // 
             // KoltukSecimEkranı
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 395);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnKoltukSil);
             this.Controls.Add(this.btnKoltukEkle);
             this.Controls.Add(this.lbSecilenKoltuklar);
@@ -829,6 +843,7 @@ namespace TurkıshHighways
             this.Text = "KoltukSecimEkranı";
             this.grpKoltuklar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -898,5 +913,6 @@ namespace TurkıshHighways
         public System.Windows.Forms.ListBox lbSecilenKoltuklar;
         private System.Windows.Forms.Label lblSecilenKoltuklar;
         private System.Windows.Forms.Button btnOnaylaDevamEt;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

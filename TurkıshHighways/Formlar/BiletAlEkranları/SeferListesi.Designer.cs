@@ -29,6 +29,7 @@ namespace TurkıshHighways.Formlar
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeferListesi));
             this.lblGidisTarihi = new System.Windows.Forms.Label();
             this.lblSeferGidis = new System.Windows.Forms.Label();
             this.lblVarısYeri = new System.Windows.Forms.Label();
@@ -36,64 +37,62 @@ namespace TurkıshHighways.Formlar
             this.lblKalkısYeri = new System.Windows.Forms.Label();
             this.lblSeferKalkıs = new System.Windows.Forms.Label();
             this.dataGridViewSefer = new System.Windows.Forms.DataGridView();
-            this.btnSeferSec = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSefer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGidisTarihi
             // 
             this.lblGidisTarihi.AutoSize = true;
-            this.lblGidisTarihi.Location = new System.Drawing.Point(561, 38);
-            this.lblGidisTarihi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGidisTarihi.Location = new System.Drawing.Point(718, 37);
             this.lblGidisTarihi.Name = "lblGidisTarihi";
-            this.lblGidisTarihi.Size = new System.Drawing.Size(0, 13);
+            this.lblGidisTarihi.Size = new System.Drawing.Size(46, 17);
             this.lblGidisTarihi.TabIndex = 17;
+            this.lblGidisTarihi.Text = "label3";
             // 
             // lblSeferGidis
             // 
             this.lblSeferGidis.AutoSize = true;
-            this.lblSeferGidis.Location = new System.Drawing.Point(495, 38);
-            this.lblSeferGidis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSeferGidis.Location = new System.Drawing.Point(620, 37);
             this.lblSeferGidis.Name = "lblSeferGidis";
-            this.lblSeferGidis.Size = new System.Drawing.Size(68, 13);
+            this.lblSeferGidis.Size = new System.Drawing.Size(92, 17);
             this.lblSeferGidis.TabIndex = 15;
             this.lblSeferGidis.Text = "Gidiş Tarihi  :";
             // 
             // lblVarısYeri
             // 
             this.lblVarısYeri.AutoSize = true;
-            this.lblVarısYeri.Location = new System.Drawing.Point(414, 38);
-            this.lblVarısYeri.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVarısYeri.Location = new System.Drawing.Point(522, 37);
             this.lblVarısYeri.Name = "lblVarısYeri";
-            this.lblVarısYeri.Size = new System.Drawing.Size(0, 13);
+            this.lblVarısYeri.Size = new System.Drawing.Size(46, 17);
             this.lblVarısYeri.TabIndex = 14;
+            this.lblVarısYeri.Text = "label2";
             // 
             // lblSeferVarıs
             // 
             this.lblSeferVarıs.AutoSize = true;
-            this.lblSeferVarıs.Location = new System.Drawing.Point(356, 38);
-            this.lblSeferVarıs.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSeferVarıs.Location = new System.Drawing.Point(439, 37);
             this.lblSeferVarıs.Name = "lblSeferVarıs";
-            this.lblSeferVarıs.Size = new System.Drawing.Size(57, 13);
+            this.lblSeferVarıs.Size = new System.Drawing.Size(77, 17);
             this.lblSeferVarıs.TabIndex = 13;
             this.lblSeferVarıs.Text = "Varış Yeri :";
             // 
             // lblKalkısYeri
             // 
             this.lblKalkısYeri.AutoSize = true;
-            this.lblKalkısYeri.Location = new System.Drawing.Point(273, 38);
-            this.lblKalkısYeri.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKalkısYeri.Location = new System.Drawing.Point(334, 37);
             this.lblKalkısYeri.Name = "lblKalkısYeri";
-            this.lblKalkısYeri.Size = new System.Drawing.Size(0, 13);
+            this.lblKalkısYeri.Size = new System.Drawing.Size(46, 17);
             this.lblKalkısYeri.TabIndex = 12;
+            this.lblKalkısYeri.Text = "label1";
             // 
             // lblSeferKalkıs
             // 
             this.lblSeferKalkıs.AutoSize = true;
-            this.lblSeferKalkıs.Location = new System.Drawing.Point(212, 38);
-            this.lblSeferKalkıs.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSeferKalkıs.Location = new System.Drawing.Point(246, 37);
             this.lblSeferKalkıs.Name = "lblSeferKalkıs";
-            this.lblSeferKalkıs.Size = new System.Drawing.Size(62, 13);
+            this.lblSeferKalkıs.Size = new System.Drawing.Size(82, 17);
             this.lblSeferKalkıs.TabIndex = 11;
             this.lblSeferKalkıs.Text = "Kalkış Yeri :";
             // 
@@ -101,32 +100,32 @@ namespace TurkıshHighways.Formlar
             // 
             this.dataGridViewSefer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSefer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSefer.Location = new System.Drawing.Point(70, 76);
-            this.dataGridViewSefer.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewSefer.Location = new System.Drawing.Point(12, 83);
+            this.dataGridViewSefer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewSefer.Name = "dataGridViewSefer";
             this.dataGridViewSefer.RowHeadersWidth = 51;
             this.dataGridViewSefer.RowTemplate.Height = 24;
             this.dataGridViewSefer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSefer.Size = new System.Drawing.Size(653, 430);
+            this.dataGridViewSefer.Size = new System.Drawing.Size(871, 529);
             this.dataGridViewSefer.TabIndex = 10;
+            this.dataGridViewSefer.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewSefer_MouseDoubleClick);
             // 
-            // btnSeferSec
+            // pictureBox1
             // 
-            this.btnSeferSec.Location = new System.Drawing.Point(308, 531);
-            this.btnSeferSec.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSeferSec.Name = "btnSeferSec";
-            this.btnSeferSec.Size = new System.Drawing.Size(135, 28);
-            this.btnSeferSec.TabIndex = 18;
-            this.btnSeferSec.Text = "Sefer Seç ve Devam Et";
-            this.btnSeferSec.UseVisualStyleBackColor = true;
-            this.btnSeferSec.Click += new System.EventHandler(this.btnSeferSec_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(162, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // SeferListesi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 579);
-            this.Controls.Add(this.btnSeferSec);
+            this.ClientSize = new System.Drawing.Size(898, 626);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblGidisTarihi);
             this.Controls.Add(this.lblSeferGidis);
             this.Controls.Add(this.lblVarısYeri);
@@ -134,11 +133,12 @@ namespace TurkıshHighways.Formlar
             this.Controls.Add(this.lblKalkısYeri);
             this.Controls.Add(this.lblSeferKalkıs);
             this.Controls.Add(this.dataGridViewSefer);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SeferListesi";
             this.Text = "SeferListesi";
             this.Load += new System.EventHandler(this.SeferListesi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSefer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,7 +151,7 @@ namespace TurkıshHighways.Formlar
         public System.Windows.Forms.Label lblSeferVarıs;
         public System.Windows.Forms.Label lblKalkısYeri;
         public System.Windows.Forms.Label lblSeferKalkıs;
-        private System.Windows.Forms.DataGridView dataGridViewSefer;
-        private System.Windows.Forms.Button btnSeferSec;
+        public System.Windows.Forms.DataGridView dataGridViewSefer;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

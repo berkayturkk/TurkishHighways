@@ -1,0 +1,569 @@
+﻿USE [master]
+GO
+/****** Object:  Database [TurkishHighways]    Script Date: 28.03.2022 11:22:00 ******/
+CREATE DATABASE [TurkishHighways]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'TurkishHighways', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\TurkishHighways.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'TurkishHighways_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\TurkishHighways_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [TurkishHighways] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [TurkishHighways].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [TurkishHighways] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [TurkishHighways] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [TurkishHighways] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [TurkishHighways] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [TurkishHighways] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [TurkishHighways] SET  MULTI_USER 
+GO
+ALTER DATABASE [TurkishHighways] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [TurkishHighways] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [TurkishHighways] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [TurkishHighways] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [TurkishHighways] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [TurkishHighways] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [TurkishHighways] SET QUERY_STORE = OFF
+GO
+USE [TurkishHighways]
+GO
+/****** Object:  Table [dbo].[Calısanlar]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Calısanlar](
+	[TC Kimlik No.] [nvarchar](11) NOT NULL,
+	[Ad] [nvarchar](50) NULL,
+	[Soyad] [nvarchar](50) NULL,
+	[Telefon] [nvarchar](11) NULL,
+	[E-Posta] [nvarchar](50) NULL,
+	[Dogum Tarihi] [date] NULL,
+	[Cinsiyet] [nchar](5) NULL,
+	[Sifre] [nvarchar](50) NULL,
+	[Ise Baslangıc Tarihi] [date] NULL,
+ CONSTRAINT [PK_Calısanlar] PRIMARY KEY CLUSTERED 
+(
+	[TC Kimlik No.] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DuzceIstanbulSeferListesi]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DuzceIstanbulSeferListesi](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Kalkıs Yeri] [nvarchar](50) NULL,
+	[Kalkıs Saati] [nchar](10) NULL,
+	[Varıs Yeri] [nvarchar](50) NULL,
+	[Varıs Saati] [nchar](10) NULL,
+	[Yolcu Sayısı] [tinyint] NULL,
+	[Yolcu Kapasitesi] [tinyint] NULL,
+	[Fiyat] [int] NULL,
+ CONSTRAINT [PK_DuzceIstanbulSeferListesi] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DuzceKocaeliSeferListesi]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DuzceKocaeliSeferListesi](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Kalkıs Yeri] [nvarchar](50) NULL,
+	[Kalkıs Saati] [nchar](10) NULL,
+	[Varıs Yeri] [nvarchar](50) NULL,
+	[Varıs Saati] [nchar](10) NULL,
+	[Yolcu Sayısı] [tinyint] NULL,
+	[Yolcu Kapasitesi] [tinyint] NULL,
+	[Fiyat] [int] NULL,
+ CONSTRAINT [PK_DuzceKocaeliSeferListesi] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DuzceSakaryaSeferListesi]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DuzceSakaryaSeferListesi](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Kalkıs Yeri] [nvarchar](50) NULL,
+	[Kalkıs Saati] [nchar](10) NULL,
+	[Varıs Yeri] [nvarchar](50) NULL,
+	[Varıs Saati] [nchar](10) NULL,
+	[Yolcu Sayısı] [tinyint] NULL,
+	[Yolcu Kapasitesi] [tinyint] NULL,
+	[Fiyat] [int] NULL,
+ CONSTRAINT [PK_DuzceSakaryaSeferListesi] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[IstanbulDuzceSeferListesi]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[IstanbulDuzceSeferListesi](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Kalkıs Yeri] [nvarchar](50) NULL,
+	[Kalkıs Saati] [nchar](10) NULL,
+	[Varıs Yeri] [nvarchar](50) NULL,
+	[Varıs Saati] [nchar](10) NULL,
+	[Yolcu Sayısı] [tinyint] NULL,
+	[Yolcu Kapasitesi] [tinyint] NULL,
+	[Fiyat] [int] NULL,
+ CONSTRAINT [PK_IstanbulDuzceSeferListesi] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[IstanbulKocaeliSeferListesi]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[IstanbulKocaeliSeferListesi](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Kalkıs Yeri] [nvarchar](50) NULL,
+	[Kalkıs Saati] [nchar](10) NULL,
+	[Varıs Yeri] [nvarchar](50) NULL,
+	[Varıs Saati] [nchar](10) NULL,
+	[Yolcu Sayısı] [tinyint] NULL,
+	[Yolcu Kapasitesi] [tinyint] NULL,
+	[Fiyat] [int] NULL,
+ CONSTRAINT [PK_IstanbulKocaeliSeferListesi] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[IstanbulSakaryaSeferListesi]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[IstanbulSakaryaSeferListesi](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Kalkıs Yeri] [nvarchar](50) NULL,
+	[Kalkıs Saati] [nchar](10) NULL,
+	[Varıs Yeri] [nvarchar](50) NULL,
+	[Varıs Saati] [nchar](10) NULL,
+	[Yolcu Sayısı] [tinyint] NULL,
+	[Yolcu Kapasitesi] [tinyint] NULL,
+	[Fiyat] [int] NULL,
+ CONSTRAINT [PK_IstanbulSakaryaSeferListesi] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KocaeliDuzceSeferListesi]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[KocaeliDuzceSeferListesi](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Kalkıs Yeri] [nvarchar](50) NULL,
+	[Kalkıs Saati] [nchar](10) NULL,
+	[Varıs Yeri] [nvarchar](50) NULL,
+	[Varıs Saati] [nchar](10) NULL,
+	[Yolcu Sayısı] [tinyint] NULL,
+	[Yolcu Kapasitesi] [tinyint] NULL,
+	[Fiyat] [int] NULL,
+ CONSTRAINT [PK_KocaeliDuzceSeferListesi] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KocaeliIstanbulSeferListesi]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[KocaeliIstanbulSeferListesi](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Kalkıs Yeri] [nvarchar](50) NULL,
+	[Kalkıs Saati] [nchar](10) NULL,
+	[Varıs Yeri] [nvarchar](50) NULL,
+	[Varıs Saati] [nchar](10) NULL,
+	[Yolcu Sayısı] [tinyint] NULL,
+	[Yolcu Kapasitesi] [tinyint] NULL,
+	[Fiyat] [int] NULL,
+ CONSTRAINT [PK_KocaeliIstanbulSeferListesi] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KocaeliSakaryaSeferListesi]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[KocaeliSakaryaSeferListesi](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Kalkıs Yeri] [nvarchar](50) NULL,
+	[Kalkıs Saati] [nchar](10) NULL,
+	[Varıs Yeri] [nvarchar](50) NULL,
+	[Varıs Saati] [nchar](10) NULL,
+	[Yolcu Sayısı] [tinyint] NULL,
+	[Yolcu Kapasitesi] [tinyint] NULL,
+	[Fiyat] [int] NULL,
+ CONSTRAINT [PK_KocaeliSakaryaSeferListesi] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SakaryaDuzceSeferListesi]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SakaryaDuzceSeferListesi](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Kalkıs Yeri] [nvarchar](50) NULL,
+	[Kalkıs Saati] [nchar](10) NULL,
+	[Varıs Yeri] [nvarchar](50) NULL,
+	[Varıs Saati] [nchar](10) NULL,
+	[Yolcu Sayısı] [tinyint] NULL,
+	[Yolcu Kapasitesi] [tinyint] NULL,
+	[Fiyat] [int] NULL,
+ CONSTRAINT [PK_SakaryaDuzceSeferListesi] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SakaryaIstanbulSeferListesi]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SakaryaIstanbulSeferListesi](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Kalkıs Yeri] [nvarchar](50) NULL,
+	[Kalkıs Saati] [nchar](10) NULL,
+	[Varıs Yeri] [nvarchar](50) NULL,
+	[Varıs Saati] [nchar](10) NULL,
+	[Yolcu Sayısı] [tinyint] NULL,
+	[Yolcu Kapasitesi] [tinyint] NULL,
+	[Fiyat] [int] NULL,
+ CONSTRAINT [PK_SakaryaIstanbulSeferListesi] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SakaryaKocaeliSeferListesi]    Script Date: 28.03.2022 11:22:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SakaryaKocaeliSeferListesi](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Kalkıs Yeri] [nvarchar](50) NULL,
+	[Kalkıs Saati] [nchar](10) NULL,
+	[Varıs Yeri] [nvarchar](50) NULL,
+	[Varıs Saati] [nchar](10) NULL,
+	[Yolcu Sayısı] [tinyint] NULL,
+	[Yolcu Kapasitesi] [tinyint] NULL,
+	[Fiyat] [int] NULL,
+ CONSTRAINT [PK_SakaryaKocaeliSeferListesi] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+INSERT [dbo].[Calısanlar] ([TC Kimlik No.], [Ad], [Soyad], [Telefon], [E-Posta], [Dogum Tarihi], [Cinsiyet], [Sifre], [Ise Baslangıc Tarihi]) VALUES (N'16368440297', N'Berkay', N'Türk', N'05536797954', N'berkayturk5481@gmail.com', CAST(N'1999-08-06' AS Date), N'Erkek', N'berkay123', CAST(N'2022-03-25' AS Date))
+GO
+SET IDENTITY_INSERT [dbo].[DuzceIstanbulSeferListesi] ON 
+
+INSERT [dbo].[DuzceIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (1, N'Düzce', N'04:00     ', N'İstanbul', N'07:30     ', 0, 42, 120)
+INSERT [dbo].[DuzceIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (2, N'Düzce', N'05:00     ', N'İstanbul', N'08:30     ', 0, 42, 120)
+INSERT [dbo].[DuzceIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (3, N'Düzce', N'06:00     ', N'İstanbul', N'09:30     ', 0, 42, 120)
+INSERT [dbo].[DuzceIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (4, N'Düzce', N'07:00     ', N'İstanbul', N'10:30     ', 0, 42, 120)
+INSERT [dbo].[DuzceIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (5, N'Düzce', N'08:00     ', N'İstanbul', N'11:30     ', 0, 42, 120)
+INSERT [dbo].[DuzceIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (6, N'Düzce', N'09:00     ', N'İstanbul', N'12:30     ', 0, 42, 120)
+INSERT [dbo].[DuzceIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (7, N'Düzce', N'10:00     ', N'İstanbul', N'13:30     ', 0, 42, 120)
+INSERT [dbo].[DuzceIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (8, N'Düzce', N'11:00     ', N'İstanbul', N'14:30     ', 0, 42, 120)
+INSERT [dbo].[DuzceIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (9, N'Düzce', N'12:00     ', N'İstanbul', N'15:30     ', 0, 42, 120)
+INSERT [dbo].[DuzceIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (10, N'Düzce', N'13:00     ', N'İstanbul', N'16:30     ', 0, 42, 120)
+SET IDENTITY_INSERT [dbo].[DuzceIstanbulSeferListesi] OFF
+GO
+SET IDENTITY_INSERT [dbo].[DuzceKocaeliSeferListesi] ON 
+
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (1, N'Düzce', N'00:00     ', N'Kocaeli', N'02:30     ', 0, 42, 100)
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (2, N'Düzce', N'01:00     ', N'Kocaeli', N'03:30     ', 0, 42, 100)
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (3, N'Düzce', N'02:00     ', N'Kocaeli', N'04:30     ', 0, 42, 100)
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (4, N'Düzce', N'03:00     ', N'Kocaeli', N'05:30     ', 0, 42, 100)
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (5, N'Düzce', N'04:00     ', N'Kocaeli', N'06:30     ', 0, 42, 100)
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (6, N'Düzce', N'05:00     ', N'Kocaeli', N'07:30     ', 0, 42, 100)
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (7, N'Düzce', N'06:00     ', N'Kocaeli', N'08:30     ', 0, 42, 100)
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (8, N'Düzce', N'07:00     ', N'Kocaeli', N'09:30     ', 0, 42, 100)
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (9, N'Düzce', N'08:00     ', N'Kocaeli', N'10:30     ', 0, 42, 100)
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (10, N'Düzce', N'09:00     ', N'Kocaeli', N'11:30     ', 0, 42, 100)
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (11, N'Düzce', N'10:00     ', N'Kocaeli', N'12:30     ', 0, 42, 100)
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (12, N'Düzce', N'11:00     ', N'Kocaeli', N'13:30     ', 0, 42, 100)
+INSERT [dbo].[DuzceKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (13, N'Düzce', N'12:00     ', N'Kocaeli', N'14:30     ', 0, 42, 100)
+SET IDENTITY_INSERT [dbo].[DuzceKocaeliSeferListesi] OFF
+GO
+SET IDENTITY_INSERT [dbo].[DuzceSakaryaSeferListesi] ON 
+
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (1, N'Düzce', N'00:00     ', N'Sakarya', N'01:30     ', 0, 42, 80)
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (2, N'Düzce', N'01:00     ', N'Sakarya', N'02:30     ', 0, 42, 80)
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (3, N'Düzce', N'02:00     ', N'Sakarya', N'03:30     ', 0, 42, 80)
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (4, N'Düzce', N'03:00     ', N'Sakarya', N'04:30     ', 0, 42, 80)
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (5, N'Düzce', N'04:00     ', N'Sakarya', N'05:30     ', 0, 42, 80)
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (6, N'Düzce', N'05:00     ', N'Sakarya', N'06:30     ', 0, 42, 80)
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (7, N'Düzce', N'06:00     ', N'Sakarya', N'07:30     ', 0, 42, 80)
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (8, N'Düzce', N'07:00     ', N'Sakarya', N'08:30     ', 0, 42, 80)
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (9, N'Düzce', N'08:00     ', N'Sakarya', N'09:30     ', 0, 42, 80)
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (10, N'Düzce', N'09:00     ', N'Sakarya', N'10:30     ', 0, 42, 80)
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (11, N'Düzce', N'10:00     ', N'Sakarya', N'11:30     ', 0, 42, 80)
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (12, N'Düzce', N'11:00     ', N'Sakarya', N'12:30     ', 0, 42, 80)
+INSERT [dbo].[DuzceSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (13, N'Düzce', N'12:00     ', N'Sakarya', N'13:30     ', 0, 42, 80)
+SET IDENTITY_INSERT [dbo].[DuzceSakaryaSeferListesi] OFF
+GO
+SET IDENTITY_INSERT [dbo].[IstanbulDuzceSeferListesi] ON 
+
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (1, N'İstanbul', N'00:00     ', N'Düzce', N'03:30     ', 0, 42, 120)
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (2, N'İstanbul', N'01:00     ', N'Düzce', N'04:30     ', 0, 42, 120)
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (3, N'İstanbul', N'02:00     ', N'Düzce', N'05:30     ', 0, 42, 120)
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (4, N'İstanbul', N'03:00     ', N'Düzce', N'06:30     ', 0, 42, 120)
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (5, N'İstanbul', N'04:00     ', N'Düzce', N'07:30     ', 0, 42, 120)
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (6, N'İstanbul', N'05:00     ', N'Düzce', N'08:30     ', 0, 42, 120)
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (7, N'İstanbul', N'06:00     ', N'Düzce', N'09:30     ', 0, 42, 120)
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (8, N'İstanbul', N'07:00     ', N'Düzce', N'10:30     ', 0, 42, 120)
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (9, N'İstanbul', N'08:00     ', N'Düzce', N'11:30     ', 0, 42, 120)
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (10, N'İstanbul', N'09:00     ', N'Düzce', N'12:30     ', 0, 42, 120)
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (11, N'İstanbul', N'10:00     ', N'Düzce', N'13:30     ', 0, 42, 120)
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (12, N'İstanbul', N'11:00     ', N'Düzce', N'14:30     ', 0, 42, 120)
+INSERT [dbo].[IstanbulDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (13, N'İstanbul', N'12:00     ', N'Düzce', N'15:30     ', 0, 42, 120)
+SET IDENTITY_INSERT [dbo].[IstanbulDuzceSeferListesi] OFF
+GO
+SET IDENTITY_INSERT [dbo].[IstanbulKocaeliSeferListesi] ON 
+
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (1, N'İstanbul', N'00:00     ', N'Kocaeli', N'01:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (2, N'İstanbul', N'01:00     ', N'Kocaeli', N'02:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (3, N'İstanbul', N'02:00     ', N'Kocaeli', N'03:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (4, N'İstanbul', N'03:00     ', N'Kocaeli', N'04:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (5, N'İstanbul', N'04:00     ', N'Kocaeli', N'05:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (6, N'İstanbul', N'05:00     ', N'Kocaeli', N'06:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (7, N'İstanbul', N'06:00     ', N'Kocaeli', N'07:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (8, N'İstanbul', N'07:00     ', N'Kocaeli', N'08:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (9, N'İstanbul', N'08:00     ', N'Kocaeli', N'09:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (10, N'İstanbul', N'09:00     ', N'Kocaeli', N'10:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (11, N'İstanbul', N'10:00     ', N'Kocaeli', N'11:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (12, N'İstanbul', N'11:00     ', N'Kocaeli', N'12:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (13, N'İstanbul', N'12:00     ', N'Kocaeli', N'13:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (14, N'İstanbul', N'13:00     ', N'Kocaeli', N'14:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (15, N'İstanbul', N'14:00     ', N'Kocaeli', N'15:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (16, N'İstanbul', N'15:00     ', N'Kocaeli', N'16:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (17, N'İstanbul', N'16:00     ', N'Kocaeli', N'17:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (18, N'İstanbul', N'17:00     ', N'Kocaeli', N'18:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (19, N'İstanbul', N'18:00     ', N'Kocaeli', N'19:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (20, N'İstanbul', N'19:00     ', N'Kocaeli', N'20:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (21, N'İstanbul', N'20:00     ', N'Kocaeli', N'21:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (22, N'İstanbul', N'21:00     ', N'Kocaeli', N'22:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (23, N'İstanbul', N'22:00     ', N'Kocaeli', N'23:30     ', 0, 42, 80)
+INSERT [dbo].[IstanbulKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (24, N'İstanbul', N'23:00     ', N'Kocaeli', N'00:30     ', 0, 42, 80)
+SET IDENTITY_INSERT [dbo].[IstanbulKocaeliSeferListesi] OFF
+GO
+SET IDENTITY_INSERT [dbo].[IstanbulSakaryaSeferListesi] ON 
+
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (1, N'İstanbul', N'00:00     ', N'Sakarya', N'02:30     ', 0, 42, 100)
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (2, N'İstanbul', N'01:00     ', N'Sakarya', N'03:30     ', 0, 42, 100)
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (3, N'İstanbul', N'02:00     ', N'Sakarya', N'04:30     ', 0, 42, 100)
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (4, N'İstanbul', N'03:00     ', N'Sakarya', N'05:30     ', 0, 42, 100)
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (5, N'İstanbul', N'04:00     ', N'Sakarya', N'06:30     ', 0, 42, 100)
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (6, N'İstanbul', N'05:00     ', N'Sakarya', N'07:30     ', 0, 42, 100)
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (7, N'İstanbul', N'06:00     ', N'Sakarya', N'08:30     ', 0, 42, 100)
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (8, N'İstanbul', N'07:00     ', N'Sakarya', N'09:30     ', 0, 42, 100)
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (9, N'İstanbul', N'08:00     ', N'Sakarya', N'10:30     ', 0, 42, 100)
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (10, N'İstanbul', N'09:00     ', N'Sakarya', N'11:30     ', 0, 42, 100)
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (11, N'İstanbul', N'10:00     ', N'Sakarya', N'12:30     ', 0, 42, 100)
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (12, N'İstanbul', N'11:00     ', N'Sakarya', N'13:30     ', 0, 42, 100)
+INSERT [dbo].[IstanbulSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (13, N'İstanbul', N'12:00     ', N'Sakarya', N'14:30     ', 0, 42, 100)
+SET IDENTITY_INSERT [dbo].[IstanbulSakaryaSeferListesi] OFF
+GO
+SET IDENTITY_INSERT [dbo].[KocaeliDuzceSeferListesi] ON 
+
+INSERT [dbo].[KocaeliDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (1, N'Kocaeli', N'03:00     ', N'Düzce', N'05:30     ', 0, 42, 100)
+INSERT [dbo].[KocaeliDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (2, N'Kocaeli', N'04:00     ', N'Düzce', N'06:30     ', 0, 42, 100)
+INSERT [dbo].[KocaeliDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (3, N'Kocaeli', N'05:00     ', N'Düzce', N'07:30     ', 0, 42, 100)
+INSERT [dbo].[KocaeliDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (4, N'Kocaeli', N'06:00     ', N'Düzce', N'08:30     ', 0, 42, 100)
+INSERT [dbo].[KocaeliDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (5, N'Kocaeli', N'07:00     ', N'Düzce', N'09:30     ', 0, 42, 100)
+INSERT [dbo].[KocaeliDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (6, N'Kocaeli', N'08:00     ', N'Düzce', N'10:30     ', 0, 42, 100)
+INSERT [dbo].[KocaeliDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (7, N'Kocaeli', N'09:00     ', N'Düzce', N'11:30     ', 0, 42, 100)
+INSERT [dbo].[KocaeliDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (8, N'Kocaeli', N'10:00     ', N'Düzce', N'12:30     ', 0, 42, 100)
+INSERT [dbo].[KocaeliDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (9, N'Kocaeli', N'11:00     ', N'Düzce', N'13:30     ', 0, 42, 100)
+INSERT [dbo].[KocaeliDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (10, N'Kocaeli', N'12:00     ', N'Düzce', N'14:30     ', 0, 42, 100)
+SET IDENTITY_INSERT [dbo].[KocaeliDuzceSeferListesi] OFF
+GO
+SET IDENTITY_INSERT [dbo].[KocaeliIstanbulSeferListesi] ON 
+
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (1, N'Kocaeli', N'02:00     ', N'İstanbul', N'03:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (2, N'Kocaeli', N'03:00     ', N'İstanbul', N'04:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (3, N'Kocaeli', N'04:00     ', N'İstanbul', N'05:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (4, N'Kocaeli', N'05:00     ', N'İstanbul', N'06:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (5, N'Kocaeli', N'06:00     ', N'İstanbul', N'07:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (6, N'Kocaeli', N'07:00     ', N'İstanbul', N'08:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (7, N'Kocaeli', N'08:00     ', N'İstanbul', N'09:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (8, N'Kocaeli', N'09:00     ', N'İstanbul', N'10:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (9, N'Kocaeli', N'10:00     ', N'İstanbul', N'11:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (10, N'Kocaeli', N'11:00     ', N'İstanbul', N'12:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (11, N'Kocaeli', N'12:00     ', N'İstanbul', N'13:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (12, N'Kocaeli', N'13:00     ', N'İstanbul', N'14:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (13, N'Kocaeli', N'14:00     ', N'İstanbul', N'15:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (14, N'Kocaeli', N'15:00     ', N'İstanbul', N'16:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (15, N'Kocaeli', N'16:00     ', N'İstanbul', N'17:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (16, N'Kocaeli', N'17:00     ', N'İstanbul', N'18:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (17, N'Kocaeli', N'18:00     ', N'İstanbul', N'19:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (18, N'Kocaeli', N'19:00     ', N'İstanbul', N'20:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (19, N'Kocaeli', N'20:00     ', N'İstanbul', N'21:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (20, N'Kocaeli', N'21:00     ', N'İstanbul', N'22:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (21, N'Kocaeli', N'22:00     ', N'İstanbul', N'23:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (22, N'Kocaeli', N'23:00     ', N'İstanbul', N'00:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (23, N'Kocaeli', N'00:00     ', N'İstanbul', N'01:30     ', 0, 42, 80)
+INSERT [dbo].[KocaeliIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (24, N'Kocaeli', N'01:00     ', N'İstanbul', N'02:30     ', 0, 42, 80)
+SET IDENTITY_INSERT [dbo].[KocaeliIstanbulSeferListesi] OFF
+GO
+SET IDENTITY_INSERT [dbo].[KocaeliSakaryaSeferListesi] ON 
+
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (1, N'Kocaeli', N'00:00     ', N'Sakarya', N'01:00     ', 0, 42, 80)
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (2, N'Kocaeli', N'01:00     ', N'Sakarya', N'02:00     ', 0, 42, 80)
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (3, N'Kocaeli', N'02:00     ', N'Sakarya', N'03:00     ', 0, 42, 80)
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (4, N'Kocaeli', N'03:00     ', N'Sakarya', N'04:00     ', 0, 42, 80)
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (5, N'Kocaeli', N'04:00     ', N'Sakarya', N'05:00     ', 0, 42, 80)
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (6, N'Kocaeli', N'05:00     ', N'Sakarya', N'06:00     ', 0, 42, 80)
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (7, N'Kocaeli', N'06:00     ', N'Sakarya', N'07:00     ', 0, 42, 80)
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (8, N'Kocaeli', N'07:00     ', N'Sakarya', N'08:00     ', 0, 42, 80)
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (9, N'Kocaeli', N'08:00     ', N'Sakarya', N'09:00     ', 0, 42, 80)
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (10, N'Kocaeli', N'09:00     ', N'Sakarya', N'10:00     ', 0, 42, 80)
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (11, N'Kocaeli', N'10:00     ', N'Sakarya', N'11:00     ', 0, 42, 80)
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (12, N'Kocaeli', N'11:00     ', N'Sakarya', N'12:00     ', 0, 42, 80)
+INSERT [dbo].[KocaeliSakaryaSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (13, N'Kocaeli', N'12:00     ', N'Sakarya', N'13:00     ', 0, 42, 80)
+SET IDENTITY_INSERT [dbo].[KocaeliSakaryaSeferListesi] OFF
+GO
+SET IDENTITY_INSERT [dbo].[SakaryaDuzceSeferListesi] ON 
+
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (1, N'Sakarya', N'02:00     ', N'Düzce', N'03:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (2, N'Sakarya', N'03:00     ', N'Düzce', N'04:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (3, N'Sakarya', N'04:00     ', N'Düzce', N'05:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (4, N'Sakarya', N'05:00     ', N'Düzce', N'06:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (5, N'Sakarya', N'06:00     ', N'Düzce', N'07:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (6, N'Sakarya', N'07:00     ', N'Düzce', N'08:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (7, N'Sakarya', N'08:00     ', N'Düzce', N'09:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (8, N'Sakarya', N'09:00     ', N'Düzce', N'10:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (9, N'Sakarya', N'10:00     ', N'Düzce', N'11:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (10, N'Sakarya', N'11:00     ', N'Düzce', N'12:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (11, N'Sakarya', N'12:00     ', N'Düzce', N'13:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (12, N'Sakarya', N'13:00     ', N'Düzce', N'14:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaDuzceSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (13, N'Sakarya', N'14:00     ', N'Düzce', N'15:30     ', 0, 42, 80)
+SET IDENTITY_INSERT [dbo].[SakaryaDuzceSeferListesi] OFF
+GO
+SET IDENTITY_INSERT [dbo].[SakaryaIstanbulSeferListesi] ON 
+
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (1, N'Sakarya', N'03:00     ', N'İstanbul', N'05:30     ', 0, 42, 100)
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (2, N'Sakarya', N'04:00     ', N'İstanbul', N'06:30     ', 0, 42, 100)
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (3, N'Sakarya', N'05:00     ', N'İstanbul', N'07:30     ', 0, 42, 100)
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (4, N'Sakarya', N'06:00     ', N'İstanbul', N'08:30     ', 0, 42, 100)
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (5, N'Sakarya', N'07:00     ', N'İstanbul', N'09:30     ', 0, 42, 100)
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (6, N'Sakarya', N'08:00     ', N'İstanbul', N'10:30     ', 0, 42, 100)
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (7, N'Sakarya', N'09:00     ', N'İstanbul', N'11:30     ', 0, 42, 100)
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (8, N'Sakarya', N'10:00     ', N'İstanbul', N'12:30     ', 0, 42, 100)
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (9, N'Sakarya', N'11:00     ', N'İstanbul', N'13:30     ', 0, 42, 100)
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (10, N'Sakarya', N'12:00     ', N'İstanbul', N'14:30     ', 0, 42, 100)
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (11, N'Sakarya', N'13:00     ', N'İstanbul', N'15:30     ', 0, 42, 100)
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (12, N'Sakarya', N'14:00     ', N'İstanbul', N'16:30     ', 0, 42, 100)
+INSERT [dbo].[SakaryaIstanbulSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (13, N'Sakarya', N'15:00     ', N'İstanbul', N'17:30     ', 0, 42, 100)
+SET IDENTITY_INSERT [dbo].[SakaryaIstanbulSeferListesi] OFF
+GO
+SET IDENTITY_INSERT [dbo].[SakaryaKocaeliSeferListesi] ON 
+
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (1, N'Sakarya', N'01:30     ', N'Kocaeli', N'02:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (2, N'Sakarya', N'02:30     ', N'Kocaeli', N'03:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (3, N'Sakarya', N'03:30     ', N'Kocaeli', N'04:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (4, N'Sakarya', N'04:30     ', N'Kocaeli', N'05:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (5, N'Sakarya', N'05:30     ', N'Kocaeli', N'06:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (6, N'Sakarya', N'06:30     ', N'Kocaeli', N'07:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (7, N'Sakarya', N'07:30     ', N'Kocaeli', N'08:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (8, N'Sakarya', N'08:30     ', N'Kocaeli', N'09:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (9, N'Sakarya', N'09:30     ', N'Kocaeli', N'10:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (10, N'Sakarya', N'10:30     ', N'Kocaeli', N'11:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (11, N'Sakarya', N'11:30     ', N'Kocaeli', N'12:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (12, N'Sakarya', N'12:30     ', N'Kocaeli', N'13:30     ', 0, 42, 80)
+INSERT [dbo].[SakaryaKocaeliSeferListesi] ([id], [Kalkıs Yeri], [Kalkıs Saati], [Varıs Yeri], [Varıs Saati], [Yolcu Sayısı], [Yolcu Kapasitesi], [Fiyat]) VALUES (13, N'Sakarya', N'13:30     ', N'Kocaeli', N'14:30     ', 0, 42, 80)
+SET IDENTITY_INSERT [dbo].[SakaryaKocaeliSeferListesi] OFF
+GO
+USE [master]
+GO
+ALTER DATABASE [TurkishHighways] SET  READ_WRITE 
+GO

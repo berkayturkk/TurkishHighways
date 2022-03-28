@@ -15,6 +15,12 @@ namespace TurkıshHighways
     {
 
         Button btn;  // Buton tanımlaması yapıldı.
+        public string sefer;
+        public string kalkıs;
+        public string varıs;
+        public decimal fiyat;
+        
+        
 
         public KoltukSecimEkranı()
         {
@@ -55,11 +61,14 @@ namespace TurkıshHighways
             if (btn.BackColor == Color.ForestGreen)
             {
                 btn.BackColor = Color.LightGray;
+                rdbBayan.Checked = false;
+                rdbBay.Checked = false;
             }
         }
 
         private void btnKoltukEkle_Click(object sender, EventArgs e)
-        {  
+        {         
+
             // Seçilen buton kaydedilerek enabled ı false olarak tekrar seçim yapılmasının önüne geçildi ve cinsiyete göre rengi belirlendi.
             if (lbSecilenKoltuklar.Items.Contains(btn.Text + "-" + "Bayan") == false && lbSecilenKoltuklar.Items.Contains(btn.Text + "-" + "Bay") == false && btn.BackColor == Color.ForestGreen)
             {
@@ -79,29 +88,57 @@ namespace TurkıshHighways
                 MessageBox.Show("Aynı koltuktan birden fazla işlem yapılamaz. Lütfen boş bir koltuk seçiniz!!");
             }
 
-
             rdbBay.Checked = false;   // Her koltuk seçiminden sonra cinsiyet seçimindeki bay seçiminin temizlenmesi sağlandı.
             rdbBayan.Checked = false;  // Her koltuk seçiminden sonra cinsiyet seçimindeki bayan seçiminin temizlenmesi sağlandı.
         }
 
         private void btnKoltukSil_Click(object sender, EventArgs e)
         {
-            
-         
-            lbSecilenKoltuklar.Items.Remove(lbSecilenKoltuklar.SelectedItem);
+
         }
 
         private void btnOnaylaDevamEt_Click(object sender, EventArgs e)
-        { 
-            OdemeEkranı odemeEkranı = new OdemeEkranı();
+        {
+            
 
-            for (int i = 0; i < lbSecilenKoltuklar.Items.Count; i++)
+            BiletSecimEkranı biletSecimEkranı = new BiletSecimEkranı();
+
+            List<string> secilenKoltuklar = new List<string>();
+
+            foreach (string secilenKoltuk in lbSecilenKoltuklar.Items)
             {
-                odemeEkranı.lblKoltukk.Text = Convert.ToString(lbSecilenKoltuklar.Items[i]);
+                secilenKoltuklar.Add(secilenKoltuk);
             }
-            odemeEkranı.Show();
-            this.Hide();
 
+            if (lbSecilenKoltuklar.Items.Count>=1)
+            {
+    
+                OdemeEkranı odemeEkranı = new OdemeEkranı();
+                odemeEkranı.lblSeferTarihiOdeme.Text = sefer;
+                odemeEkranı.lblKalkısOdeme.Text = kalkıs;
+                odemeEkranı.lblVarısOdeme.Text = varıs;
+                odemeEkranı.lblFiyatOdeme.Text = fiyat.ToString();
+                odemeEkranı.lblAdetOdeme.Text = lbSecilenKoltuklar.Items.Count.ToString();
+                foreach (string koltuk in secilenKoltuklar)
+                {
+                    odemeEkranı.listboxKoltukOdeme.Items.Add(koltuk);
+                }
+
+                odemeEkranı.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Lütfen koltuk ekleyiniz!!");
+            }
+
+        }
+
+        private void btnSeferListesineDön_Click(object sender, EventArgs e)
+        {
+            SeferListesi seferListesi = new SeferListesi();
+            seferListesi.Show();
+            this.Hide();
         }
     }
 }

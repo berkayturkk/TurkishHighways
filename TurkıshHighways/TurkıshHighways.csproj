@@ -46,71 +46,95 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="enumlar.cs" />
-    <Compile Include="Formlar\BiletSecimEkranı.cs">
+    <Compile Include="Formlar\BiletAlEkranları\BiletFisi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\BiletSecimEkranı.Designer.cs">
+    <Compile Include="Formlar\BiletAlEkranları\BiletFisi.Designer.cs">
+      <DependentUpon>BiletFisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\GirisEkranı.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\GirisEkranı.Designer.cs">
+      <DependentUpon>GirisEkranı.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\YoneticiEkranları\YoneticiAnaMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\YoneticiEkranları\YoneticiAnaMenu.Designer.cs">
+      <DependentUpon>YoneticiAnaMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Abstract\IDbContext.cs" />
+    <Compile Include="Helper\Concrete\DbContext.cs" />
+    <Compile Include="Helper\enumlar.cs" />
+    <Compile Include="Formlar\BiletAlEkranları\BiletSecimEkranı.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\BiletAlEkranları\BiletSecimEkranı.Designer.cs">
       <DependentUpon>BiletSecimEkranı.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\cvv2Nedir.cs">
+    <Compile Include="Formlar\BiletAlEkranları\cvv2Nedir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\cvv2Nedir.Designer.cs">
+    <Compile Include="Formlar\BiletAlEkranları\cvv2Nedir.Designer.cs">
       <DependentUpon>cvv2Nedir.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\AnaMenü.cs">
+    <Compile Include="Formlar\CalısanEkranları\CalısanAnaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\AnaMenü.Designer.cs">
-      <DependentUpon>AnaMenü.cs</DependentUpon>
+    <Compile Include="Formlar\CalısanEkranları\CalısanAnaMenu.Designer.cs">
+      <DependentUpon>CalısanAnaMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\KoltukSecimEkranı.cs">
+    <Compile Include="Formlar\BiletAlEkranları\KoltukSecimEkranı.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\KoltukSecimEkranı.Designer.cs">
+    <Compile Include="Formlar\BiletAlEkranları\KoltukSecimEkranı.Designer.cs">
       <DependentUpon>KoltukSecimEkranı.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\OdemeEkranı.cs">
+    <Compile Include="Formlar\BiletAlEkranları\OdemeEkranı.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\OdemeEkranı.Designer.cs">
+    <Compile Include="Formlar\BiletAlEkranları\OdemeEkranı.Designer.cs">
       <DependentUpon>OdemeEkranı.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\SeferListesi.cs">
+    <Compile Include="Formlar\BiletAlEkranları\SeferListesi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\SeferListesi.Designer.cs">
+    <Compile Include="Formlar\BiletAlEkranları\SeferListesi.Designer.cs">
       <DependentUpon>SeferListesi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\YolcuBilgileri.cs">
+    <Compile Include="Formlar\BiletAlEkranları\YolcuBilgileri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\YolcuBilgileri.Designer.cs">
+    <Compile Include="Formlar\BiletAlEkranları\YolcuBilgileri.Designer.cs">
       <DependentUpon>YolcuBilgileri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Parametreler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formlar\AnaMenü.resx">
-      <DependentUpon>AnaMenü.cs</DependentUpon>
+    <EmbeddedResource Include="Formlar\CalısanEkranları\CalısanAnaMenu.resx">
+      <DependentUpon>CalısanAnaMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\BiletSecimEkranı.resx">
+    <EmbeddedResource Include="Formlar\BiletAlEkranları\BiletSecimEkranı.resx">
       <DependentUpon>BiletSecimEkranı.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\cvv2Nedir.resx">
+    <EmbeddedResource Include="Formlar\BiletAlEkranları\cvv2Nedir.resx">
       <DependentUpon>cvv2Nedir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\KoltukSecimEkranı.resx">
+    <EmbeddedResource Include="Formlar\BiletAlEkranları\KoltukSecimEkranı.resx">
       <DependentUpon>KoltukSecimEkranı.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\OdemeEkranı.resx">
+    <EmbeddedResource Include="Formlar\BiletAlEkranları\OdemeEkranı.resx">
       <DependentUpon>OdemeEkranı.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\SeferListesi.resx">
+    <EmbeddedResource Include="Formlar\BiletAlEkranları\SeferListesi.resx">
       <DependentUpon>SeferListesi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\YolcuBilgileri.resx">
+    <EmbeddedResource Include="Formlar\BiletAlEkranları\YolcuBilgileri.resx">
       <DependentUpon>YolcuBilgileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\GirisEkranı.resx">
+      <DependentUpon>GirisEkranı.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,9 +154,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resimler\Microsoft SQL Server Management Studio 18.lnk" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resimler\icons8_delete_database_48px.png" />
+    <Content Include="Resimler\icons8_list_of_parts_40px.png" />
+    <Content Include="Resimler\icons8_Logout_32px.png" />
+    <Content Include="Resimler\icons8_new_ticket_40px.png" />
+    <Content Include="Resimler\icons8_update_48px.png" />
+    <Content Include="Resimler\otobus.png" />
+    <Content Include="Resimler\amblem.png" />
+    <Content Include="DatabaseScript.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

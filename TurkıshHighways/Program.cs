@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TurkıshHighways.Formlar;
 
+
 namespace TurkıshHighways
 {
     static class Program
@@ -17,7 +18,7 @@ namespace TurkıshHighways
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AnaMenü());
+            Application.Run(new BiletSecimEkranı());
         }
     }
 }
