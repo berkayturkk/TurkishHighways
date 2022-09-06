@@ -124,22 +124,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resimler\Microsoft SQL Server Management Studio 18.lnk" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Resimler\icons8_delete_database_48px.png" />
-    <Content Include="Resimler\icons8_list_of_parts_40px.png" />
-    <Content Include="Resimler\icons8_Logout_32px.png" />
-    <Content Include="Resimler\icons8_new_ticket_40px.png" />
-    <Content Include="Resimler\icons8_update_48px.png" />
-    <Content Include="Resimler\otobus.png" />
+    <Content Include="Database\TurkishHighwaysScript.sql" />
     <Content Include="Resimler\amblem.png" />
-    <Content Include="DatabaseScript.txt" />
-    <Content Include="Resimler\otobus_bilet.png" />
+    <Content Include="Resimler\biletsecim.PNG" />
+    <Content Include="Resimler\bilettamamlama.PNG" />
+    <Content Include="Resimler\koltuksecimi1.PNG" />
+    <Content Include="Resimler\koltuksecimi2.PNG" />
+    <Content Include="Resimler\odemeekranı1.PNG" />
+    <Content Include="Resimler\odemeekranı2.PNG" />
+    <Content Include="Resimler\seferlistesi.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
