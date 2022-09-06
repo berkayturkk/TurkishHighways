@@ -12,7 +12,6 @@ namespace TurkıshHighways
         {
             İstanbul,
             Sakarya,
-            Kocaeli,
             Düzce
         }
         public enum Uyruklar

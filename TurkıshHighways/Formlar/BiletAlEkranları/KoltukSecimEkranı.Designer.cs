@@ -626,7 +626,7 @@ namespace TurkıshHighways
             this.lblSecilen.AutoSize = true;
             this.lblSecilen.Location = new System.Drawing.Point(700, 345);
             this.lblSecilen.Name = "lblSecilen";
-            this.lblSecilen.Size = new System.Drawing.Size(54, 17);
+            this.lblSecilen.Size = new System.Drawing.Size(52, 16);
             this.lblSecilen.TabIndex = 50;
             this.lblSecilen.Text = "Seçilen";
             // 
@@ -647,7 +647,7 @@ namespace TurkıshHighways
             this.lblBos.AutoSize = true;
             this.lblBos.Location = new System.Drawing.Point(818, 345);
             this.lblBos.Name = "lblBos";
-            this.lblBos.Size = new System.Drawing.Size(32, 17);
+            this.lblBos.Size = new System.Drawing.Size(31, 16);
             this.lblBos.TabIndex = 48;
             this.lblBos.Text = "Bos";
             // 
@@ -668,7 +668,7 @@ namespace TurkıshHighways
             this.lblBayanDolu.AutoSize = true;
             this.lblBayanDolu.Location = new System.Drawing.Point(550, 345);
             this.lblBayanDolu.Name = "lblBayanDolu";
-            this.lblBayanDolu.Size = new System.Drawing.Size(90, 17);
+            this.lblBayanDolu.Size = new System.Drawing.Size(84, 16);
             this.lblBayanDolu.TabIndex = 46;
             this.lblBayanDolu.Text = "Bayan - Dolu";
             // 
@@ -689,7 +689,7 @@ namespace TurkıshHighways
             this.lblBayDolu.AutoSize = true;
             this.lblBayDolu.Location = new System.Drawing.Point(398, 345);
             this.lblBayDolu.Name = "lblBayDolu";
-            this.lblBayDolu.Size = new System.Drawing.Size(74, 17);
+            this.lblBayDolu.Size = new System.Drawing.Size(69, 16);
             this.lblBayDolu.TabIndex = 44;
             this.lblBayDolu.Text = "Bay - Dolu";
             // 
@@ -710,7 +710,7 @@ namespace TurkıshHighways
             this.lblCinsiyet.AutoSize = true;
             this.lblCinsiyet.Location = new System.Drawing.Point(34, 181);
             this.lblCinsiyet.Name = "lblCinsiyet";
-            this.lblCinsiyet.Size = new System.Drawing.Size(65, 17);
+            this.lblCinsiyet.Size = new System.Drawing.Size(60, 16);
             this.lblCinsiyet.TabIndex = 53;
             this.lblCinsiyet.Text = "Cinsiyet :";
             // 
@@ -719,7 +719,7 @@ namespace TurkıshHighways
             this.rdbBay.AutoSize = true;
             this.rdbBay.Location = new System.Drawing.Point(112, 216);
             this.rdbBay.Name = "rdbBay";
-            this.rdbBay.Size = new System.Drawing.Size(53, 21);
+            this.rdbBay.Size = new System.Drawing.Size(52, 20);
             this.rdbBay.TabIndex = 52;
             this.rdbBay.TabStop = true;
             this.rdbBay.Text = "Bay";
@@ -730,7 +730,7 @@ namespace TurkıshHighways
             this.rdbBayan.AutoSize = true;
             this.rdbBayan.Location = new System.Drawing.Point(37, 216);
             this.rdbBayan.Name = "rdbBayan";
-            this.rdbBayan.Size = new System.Drawing.Size(69, 21);
+            this.rdbBayan.Size = new System.Drawing.Size(67, 20);
             this.rdbBayan.TabIndex = 51;
             this.rdbBayan.TabStop = true;
             this.rdbBayan.Text = "Bayan";
@@ -790,7 +790,7 @@ namespace TurkıshHighways
             this.lblSecilenKoltuklar.AutoSize = true;
             this.lblSecilenKoltuklar.Location = new System.Drawing.Point(921, 36);
             this.lblSecilenKoltuklar.Name = "lblSecilenKoltuklar";
-            this.lblSecilenKoltuklar.Size = new System.Drawing.Size(178, 17);
+            this.lblSecilenKoltuklar.Size = new System.Drawing.Size(166, 16);
             this.lblSecilenKoltuklar.TabIndex = 57;
             this.lblSecilenKoltuklar.Text = "Secilen Koltuk Numaraları :";
             // 

@@ -19,36 +19,24 @@ namespace TurkıshHighways
         public string kalkıs;
         public string varıs;
         public decimal fiyat;
-        
-        
+
+
 
         public KoltukSecimEkranı()
         {
             InitializeComponent();
-        } 
+        }
 
         private void btnKoltuk1_Click(object sender, EventArgs e)
         {
-            btn = sender as Button; 
+            btn = sender as Button;
 
             // Seçilen butonun rengi yeşil olması ve böylece seçildiği anlaşılması sağlandı.
 
             if (rdbBay.Checked == true || rdbBayan.Checked == true)
-            {                
-                YolcuBilgileri yolcu = new YolcuBilgileri();
-               
-                yolcu.ShowDialog();
-
-                if (yolcu.DialogResult == DialogResult.OK)
-                {
-                    btn.BackColor = Color.ForestGreen;
-                }
-                else if (yolcu.DialogResult == DialogResult.Cancel)
-                {
-                    btn.BackColor = Color.LightGray;
-                    rdbBayan.Checked = false;
-                    rdbBay.Checked = false;
-                }
+            {
+                btn.BackColor = Color.ForestGreen;
+          
             }
             else if (rdbBayan.Checked == false && rdbBay.Checked == false)
             {
@@ -67,7 +55,7 @@ namespace TurkıshHighways
         }
 
         private void btnKoltukEkle_Click(object sender, EventArgs e)
-        {         
+        {
 
             // Seçilen buton kaydedilerek enabled ı false olarak tekrar seçim yapılmasının önüne geçildi ve cinsiyete göre rengi belirlendi.
             if (lbSecilenKoltuklar.Items.Contains(btn.Text + "-" + "Bayan") == false && lbSecilenKoltuklar.Items.Contains(btn.Text + "-" + "Bay") == false && btn.BackColor == Color.ForestGreen)
@@ -94,12 +82,19 @@ namespace TurkıshHighways
 
         private void btnKoltukSil_Click(object sender, EventArgs e)
         {
+            if (lbSecilenKoltuklar.SelectedItem != null)
+            {
+                lbSecilenKoltuklar.Items.Remove(lbSecilenKoltuklar.SelectedItem);
+                btn.BackColor = Color.LightGray;
+                btn.Enabled = true;
+
+            }
 
         }
 
         private void btnOnaylaDevamEt_Click(object sender, EventArgs e)
         {
-            
+
 
             BiletSecimEkranı biletSecimEkranı = new BiletSecimEkranı();
 
@@ -110,20 +105,24 @@ namespace TurkıshHighways
                 secilenKoltuklar.Add(secilenKoltuk);
             }
 
-            if (lbSecilenKoltuklar.Items.Count>=1)
+            if (lbSecilenKoltuklar.Items.Count >= 1)
             {
-    
+
                 OdemeEkranı odemeEkranı = new OdemeEkranı();
                 odemeEkranı.lblSeferTarihiOdeme.Text = sefer;
                 odemeEkranı.lblKalkısOdeme.Text = kalkıs;
                 odemeEkranı.lblVarısOdeme.Text = varıs;
                 odemeEkranı.lblFiyatOdeme.Text = fiyat.ToString();
                 odemeEkranı.lblAdetOdeme.Text = lbSecilenKoltuklar.Items.Count.ToString();
-                foreach (string koltuk in secilenKoltuklar)
+                odemeEkranı.lblKoltukNu.Text = btn.Text;
+                if(lbSecilenKoltuklar.Items.Contains(btn.Text + "-" + "Bay") == true)
                 {
-                    odemeEkranı.listboxKoltukOdeme.Items.Add(koltuk);
+                    odemeEkranı.lblOdemeCinsiyet.Text = "Bay";
                 }
-
+                else if (lbSecilenKoltuklar.Items.Contains(btn.Text + "-" + "Bayan") == true)
+                {
+                    odemeEkranı.lblOdemeCinsiyet.Text = "Bayan";
+                }
                 odemeEkranı.Show();
                 this.Hide();
             }

@@ -52,18 +52,6 @@
     <Compile Include="Formlar\BiletAlEkranları\BiletFisi.Designer.cs">
       <DependentUpon>BiletFisi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\GirisEkranı.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formlar\GirisEkranı.Designer.cs">
-      <DependentUpon>GirisEkranı.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\YoneticiEkranları\YoneticiAnaMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formlar\YoneticiEkranları\YoneticiAnaMenu.Designer.cs">
-      <DependentUpon>YoneticiAnaMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helper\Abstract\IDbContext.cs" />
     <Compile Include="Helper\Concrete\DbContext.cs" />
     <Compile Include="Helper\enumlar.cs" />
@@ -78,12 +66,6 @@
     </Compile>
     <Compile Include="Formlar\BiletAlEkranları\cvv2Nedir.Designer.cs">
       <DependentUpon>cvv2Nedir.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\CalısanEkranları\CalısanAnaMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formlar\CalısanEkranları\CalısanAnaMenu.Designer.cs">
-      <DependentUpon>CalısanAnaMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\BiletAlEkranları\KoltukSecimEkranı.cs">
       <SubType>Form</SubType>
@@ -103,17 +85,11 @@
     <Compile Include="Formlar\BiletAlEkranları\SeferListesi.Designer.cs">
       <DependentUpon>SeferListesi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\BiletAlEkranları\YolcuBilgileri.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formlar\BiletAlEkranları\YolcuBilgileri.Designer.cs">
-      <DependentUpon>YolcuBilgileri.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helper\Parametreler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formlar\CalısanEkranları\CalısanAnaMenu.resx">
-      <DependentUpon>CalısanAnaMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Formlar\BiletAlEkranları\BiletFisi.resx">
+      <DependentUpon>BiletFisi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\BiletAlEkranları\BiletSecimEkranı.resx">
       <DependentUpon>BiletSecimEkranı.cs</DependentUpon>
@@ -129,12 +105,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\BiletAlEkranları\SeferListesi.resx">
       <DependentUpon>SeferListesi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\BiletAlEkranları\YolcuBilgileri.resx">
-      <DependentUpon>YolcuBilgileri.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\GirisEkranı.resx">
-      <DependentUpon>GirisEkranı.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,6 +139,7 @@
     <Content Include="Resimler\otobus.png" />
     <Content Include="Resimler\amblem.png" />
     <Content Include="DatabaseScript.txt" />
+    <Content Include="Resimler\otobus_bilet.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

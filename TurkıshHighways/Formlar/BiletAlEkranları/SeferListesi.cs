@@ -31,12 +31,25 @@ namespace TurkıshHighways.Formlar
             }
             else if (lblKalkısYeri.Text == "İstanbul" && lblVarısYeri.Text == "Düzce")
             {
-                seferDa = new SqlDataAdapter("SELECT*FROM IstanbulDüzceSeferListesi", seferBağlantı);
+                seferDa = new SqlDataAdapter("SELECT*FROM IstanbulDuzceSeferListesi", seferBağlantı);
             }
-            else if (lblKalkısYeri.Text == "İstanbul" && lblVarısYeri.Text == "Kocaeli")
+            else if (lblKalkısYeri.Text == "Sakarya" && lblVarısYeri.Text == "Düzce")
             {
-                seferDa = new SqlDataAdapter("SELECT*FROM IstanbulKocaeliSeferListesi", seferBağlantı);
+                seferDa = new SqlDataAdapter("SELECT*FROM SakaryaDuzceSeferListesi", seferBağlantı);
             }
+            else if (lblKalkısYeri.Text == "Sakarya" && lblVarısYeri.Text == "İstanbul")
+            {
+                seferDa = new SqlDataAdapter("SELECT*FROM SakaryaIstanbulSeferListesi", seferBağlantı);
+            }
+            else if (lblKalkısYeri.Text == "Düzce" && lblVarısYeri.Text == "Sakarya")
+            {
+                seferDa = new SqlDataAdapter("SELECT*FROM DuzceSakaryaSeferListesi", seferBağlantı);
+            }
+            else if (lblKalkısYeri.Text == "Düzce" && lblVarısYeri.Text == "İstanbul")
+            {
+                seferDa = new SqlDataAdapter("SELECT*FROM DuzceIstanbulSeferListesi", seferBağlantı);
+            }
+
 
 
             DataTable seferTablo = new DataTable();
@@ -65,6 +78,11 @@ namespace TurkıshHighways.Formlar
             koltukSecimEkranı.fiyat = Convert.ToInt32(Convert.ToDecimal(dataGridViewSefer.CurrentRow.Cells[7].Value.ToString()));
             koltukSecimEkranı.Show();
             this.Hide();
+        }
+
+        private void dataGridViewSefer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
